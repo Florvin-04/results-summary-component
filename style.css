@@ -1,0 +1,276 @@
+/* https://andy-bell.co.uk/a-modern-css-reset/ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* custom propreties */
+
+:root {
+  --Primary-clr-light-red: 0 100% 67%;
+  --Primary-clr-orangey-yellow: 39 100% 56%;
+  --Primary-clr-green-teal: 166 100% 37%;
+  --Primary-clr-cobalt-blue: 234 85% 45%;
+
+  /* gradient */
+  --bg1-light-slate-blue: 252 100% 67%;
+  --bg2-light-royal-blue: 241 81% 54%;
+
+  /* cicle hsla clr */
+  --circle-clr-violet-blue: 256, 72%, 46%, 1;
+  --circle-clr-persian-blue: 241, 72%, 46%, 0;
+
+  --Neutral-clr-white: 0 0% 100%;
+  --Neutral-clr-pale-blue: 221 100% 96%;
+  --Neutral-clr-light-lavender: 241 100% 89%;
+  --Neutral-clrd-dark-gray-blue: 224 30% 27%;
+}
+
+html {
+  font-size: 18px;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+.upper-cont {
+  background-image: linear-gradient(hsl(var(--bg1-light-slate-blue)), hsl(var(--bg2-light-royal-blue)));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  padding: 1.5rem 0;
+}
+
+.upper-cont p {
+  color: hsl(var(--Neutral-clr-light-lavender));
+  font-size: 0.8rem;
+}
+
+.circle {
+  /* border: 1px solid red; */
+  border-radius: 50%;
+  aspect-ratio: 1;
+  width: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(hsla(var(--circle-clr-violet-blue)), hsla(var(--circle-clr-persian-blue)));
+}
+
+.circle > h1 {
+  font-size: 2.3rem;
+  color: hsl(var(--Neutral-clr-white));
+}
+
+.circle > p {
+  color: hsl(var(--Neutral-clr-light-lavender) / 0.7);
+  font-size: 0.6rem;
+}
+.description > h3 {
+  font-size: 1.1rem;
+  color: hsl(var(--Neutral-clr-white));
+  font-weight: 500;
+}
+.description > p {
+  width: 30ch;
+}
+
+.summary {
+  display: grid;
+  padding: 1rem;
+  gap: 1rem;
+}
+.summary > h4 {
+  color: hsl(var(--Neutral-clrd-dark-gray-blue));
+}
+.summary > ul {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.summary li {
+  display: flex;
+  /* outline: 1px solid limegreen; */
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.6rem;
+}
+
+.summary li p > span {
+  font-weight: 700;
+}
+
+.total {
+  color: hsl(var(--Neutral-clrd-dark-gray-blue) / 0.7);
+}
+
+.summary li > p:last-child {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.reaction-container {
+  background-color: hsl(var(--Primary-clr-light-red) / 0.1);
+}
+
+.reaction {
+  color: hsl(var(--Primary-clr-light-red));
+}
+
+.memory-container {
+  background-color: hsl(var(--Primary-clr-orangey-yellow) / 0.1);
+}
+
+.memory {
+  color: hsl(var(--Primary-clr-orangey-yellow));
+}
+.verbal-container {
+  background-color: hsl(var(--Primary-clr-green-teal) / 0.1);
+}
+.verbal {
+  color: hsl(var(--Primary-clr-green-teal));
+}
+.visual-container {
+  background-color: hsl(var(--Primary-clr-cobalt-blue) / 0.1);
+}
+.visual {
+  color: hsl(var(--Primary-clr-cobalt-blue));
+}
+
+.continue-btn {
+  background-color: #303b59;
+  color: hsl(var(--Neutral-clr-white));
+  border-radius: 1.5rem;
+  padding: 0.7em 0.5em;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.continue-btn:hover {
+  background-image: linear-gradient(hsl(var(--bg1-light-slate-blue)), hsl(var(--bg2-light-royal-blue)));
+}
+
+@media (min-width: 900px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .container {
+    /* border: 1px solid red; */
+    display: flex;
+    width: 50%;
+    height: 25rem;
+    border-radius: 2rem;
+    box-shadow: 10px 10px 32px -12px rgba(0, 0, 0, 0.75);
+  }
+  .upper-cont {
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    justify-content: space-around;
+    width: 50%;
+    padding: 3rem;
+  }
+  .upper-cont > p:first-child {
+    font-size: 1.1rem;
+  }
+  .circle {
+    width: 9rem;
+  }
+
+  .circle > h1 {
+    position: relative;
+    top: 0.5rem;
+    font-size: 3.5rem;
+  }
+  .circle > p {
+    position: relative;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    bottom: 0.3rem;
+  }
+  .description > h3 {
+    font-size: 1.5rem;
+  }
+  .description > p {
+    margin-top: 1rem;
+    width: 25ch;
+  }
+  .summary {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+  }
+  .summary > h4 {
+    align-self: end;
+  }
+  .continue-btn {
+    padding: 0.1em;
+  }
+  .attribution {
+    position: absolute;
+    bottom: 2rem;
+  }
+}
